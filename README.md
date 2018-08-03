@@ -1,8 +1,8 @@
 Node Options:
 -------------
---version
---experimental-modules
---experimental-vm-modules
+1. --version
+2. --experimental-modules
+3. --experimental-vm-modules
 
 Node provides a standalone and includible REPL
 process.exit();
