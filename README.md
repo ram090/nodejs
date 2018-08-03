@@ -105,4 +105,24 @@ Apache Benchmark tool:
 ---------------------
 https://www.apachelounge.com/download/
 
+Heroku Deployment Steps:
+-----------------------
 
+
+heroku login
+
+ssh-keygen -t rsa
+heroku keys:add
+heroku keys
+
+
+
+git init
+git add .
+git commit -m "First Commit"
+
+heroku create
+git push heroku master
+heroku open
+
+heroku logs --tail
