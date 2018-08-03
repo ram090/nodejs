@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blogs</title>
+</head>
+<body>
+    {{> header}}
+    <h3>Blogs</h3>
+    
+        {{#each blogs}}
+        <ul style="border: 1px solid; margin-bottom: 10px"></ul>
+            <li>Id: {{this.id}}</li>
+            <li>Title: {{this.title}}</li>
+            <li>Body: {{this.body}}</li>
+        </ul>
+        {{/each}}
+    {{> footer}}
+</body>
+</html>

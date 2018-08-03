@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Customers</title>
+    <script src="jquery-3.3.1.min.js"> </script>
+    <script src="socket.io/socket.io.js>"></script>
+    <script>
+        $(document).ready(function() {
+            var url = "/customers";
+            $.get(url).then(function(data) {
+               data.forEach(cust => {
+                   $("#customers").append(`<p>Id: ${cust.id} Name: ${cust.name} Location: ${cust.location}</p>`)
+               })
+            });
+
+            var socket = io();
+            socket.on('connect', function() {
+                console.log("Connected to server..")
+            });
+
+            socket.on('addCustomer', (data) => {
+                console.log(data)
+                $("#customers").append(`<p>Id: ${data.id} Name: ${data.name} Location: ${data.location}</p>`)
+            })
+        })
+    </script>
+</head>
+<body>
+    <h2>Customers</h2>
+    <div id="customers">
+
+    </div>
+</body>
+</html>
